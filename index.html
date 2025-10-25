@@ -12,8 +12,9 @@
         }
 
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
             color: white;
             min-height: 100vh;
             overflow-x: hidden;
@@ -35,12 +36,15 @@
             font-size: 3.5em;
             text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
             margin-bottom: 10px;
+            font-weight: 900;
+            letter-spacing: 2px;
         }
 
         .subtitle {
             font-size: 1.5em;
             color: #ffeb3b;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 600;
         }
 
         .roast-box {
@@ -58,7 +62,7 @@
             font-size: 1.8em;
             line-height: 1.5;
             margin: 20px 0;
-            font-weight: bold;
+            font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
@@ -74,7 +78,7 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
             transition: all 0.3s;
             margin: 15px;
-            font-family: 'Comic Sans MS', cursive;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
 
         .btn:hover {
@@ -110,8 +114,8 @@
 
         .photo-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin: 30px 0;
         }
 
@@ -125,13 +129,15 @@
         }
 
         .photo-card:hover {
-            transform: scale(1.05) rotate(2deg);
+            transform: scale(1.03) rotate(1deg);
         }
 
         .photo-card img {
             width: 100%;
-            height: 280px;
+            height: auto;
+            aspect-ratio: 3/4;
             object-fit: cover;
+            object-position: center;
             border-radius: 10px;
             margin-bottom: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -156,6 +162,7 @@
             pointer-events: none;
             font-size: 3em;
             animation: explode 1s forwards;
+            z-index: 1000;
         }
 
         @keyframes explode {
@@ -187,6 +194,133 @@
         .stat-label {
             font-size: 1em;
             margin-top: 5px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .roast-text {
+                font-size: 1.4em;
+            }
+
+            .btn {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+
+            .stat-box {
+                min-width: 130px;
+                padding: 15px;
+            }
+
+            .stat-number {
+                font-size: 2em;
+            }
+
+            .photo-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .photo-card img {
+                aspect-ratio: 3/4;
+                max-height: 500px;
+            }
+
+            .photo-caption {
+                font-size: 1.05em;
+            }
+
+            h2 {
+                font-size: 2em !important;
+            }
+
+            h3 {
+                font-size: 1.6em !important;
+            }
+
+            .roast-box p {
+                font-size: 1.15em !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                margin: 25px 0;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .roast-text {
+                font-size: 1.2em;
+            }
+
+            .btn {
+                padding: 14px 28px;
+                font-size: 1em;
+                margin: 10px 5px;
+            }
+
+            .fire-emoji {
+                font-size: 1.5em;
+            }
+
+            .stat-box {
+                min-width: 110px;
+                padding: 12px;
+                margin: 8px;
+            }
+
+            .stat-number {
+                font-size: 1.8em;
+            }
+
+            .stat-label {
+                font-size: 0.9em;
+            }
+
+            .photo-card img {
+                aspect-ratio: 3/4;
+                max-height: 450px;
+            }
+
+            .photo-caption {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.7em !important;
+                margin: 30px 0 15px 0 !important;
+            }
+
+            h3 {
+                font-size: 1.4em !important;
+            }
+
+            .roast-box {
+                padding: 20px 15px;
+            }
+
+            .roast-box p {
+                font-size: 1.05em !important;
+            }
+
+            .container {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -226,15 +360,15 @@
         
         <div class="photo-section">
             <div class="photo-card">
-                <img src="image1.jpg" alt="Petrol explaining" id="img1">
+                <img src="image1.jpg" alt="Petrol explaining">
                 <div class="photo-caption">"Petrol explaining how YOU'RE the problem in an argument HE started" 🎭</div>
             </div>
             <div class="photo-card">
-                <img src="image2.jpg" alt="Petrol thinking" id="img2">
+                <img src="image2.jpg" alt="Petrol thinking">
                 <div class="photo-caption">"Deep in thought: 'How can I turn this peaceful moment into chaos?'" 🤔</div>
             </div>
             <div class="photo-card">
-                <img src="image3.jpg" alt="Petrol distracted" id="img3">
+                <img src="image3.jpg" alt="Petrol distracted">
                 <div class="photo-caption">"Checking if the argument he started made it to the group chat" 📱</div>
             </div>
         </div>
